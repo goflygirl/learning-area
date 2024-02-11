@@ -32,32 +32,31 @@
 
     <script>
         const shoppingList = document.querySelector('ul');
-        const itemToBuy = document.querySelector('input');
-        const button = document.querySelector('button');
+        const addToList = document.querySelector('input');
+        const btn = document.querySelector('button');
 
-        button.addEventListener( 'click', () => {
-            const myNewItem = itemToBuy.value;
-            itemToBuy.value = '';
+        btn.addEventListener('click', () => {
+            const newItem = addToList.value;
+            addToList.value = "";
 
-            const listItem = document.createElement('li');
-            const listText = document.createElement('span');
-            const listBtn = document.createElement('button');
-            
-            listItem.appendChild(listText);
-            listItem.appendChild(listBtn);
-            listText.textContent=myNewItem;
-            listBtn.textContent = 'Delete';
+            const shoppingListItem = document.createElement('li');
+            const spanItem = document.createElement('span');
+            const dButton = document.createElement('button');
 
-            shoppingList.appendChild(listItem);
+            shoppingListItem.appendChild(spanItem);
+            spanItem.textContent = newItem;
+            shoppingListItem.appendChild(dButton);
+            dButton.textContent = 'Delete';
 
-            listBtn.addEventListener('click', () => {
-                shoppingList.removeChild(listItem);
+            shoppingList.appendChild(shoppingListItem);
+
+            dButton.addEventListener('click', () => {
+                shoppingList.removeChild(shoppingListItem);
+                addToList.focus();
             });
 
-            input.focus();
+            addToList.focus();
         });
-
-
     </script>
   </body>
 </html>
