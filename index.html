@@ -3,60 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping list example</title>
-    <style>
-      li {
-        margin-bottom: 10px;
-      }
-
-      li button {
-        font-size: 8px;
-        margin-left: 20px;
-        color: #666;
-      }
-    </style>
+    <title>Exercises</title>
   </head>
   <body>
-
-    <h1>My shopping list</h1>
-
-    <div>
-      <label for="item">Enter a new item:</label>
-      <input type="text" name="item" id="item">
-      <button>Add item</button>
-    </div>
-
-    <ul>
-
-    </ul>
+    <p id="message">A paragraph</p>
 
     <script>
-        const shoppingList = document.querySelector('ul');
-        const addToList = document.querySelector('input');
-        const btn = document.querySelector('button');
-
-        btn.addEventListener('click', () => {
-            const newItem = addToList.value;
-            addToList.value = "";
-
-            const shoppingListItem = document.createElement('li');
-            const spanItem = document.createElement('span');
-            const dButton = document.createElement('button');
-
-            shoppingListItem.appendChild(spanItem);
-            spanItem.textContent = newItem;
-            shoppingListItem.appendChild(dButton);
-            dButton.textContent = 'Delete';
-
-            shoppingList.appendChild(shoppingListItem);
-
-            dButton.addEventListener('click', () => {
-                shoppingList.removeChild(shoppingListItem);
-                addToList.focus();
-            });
-
-            addToList.focus();
-        });
+        const existingText = document.querySelector('#message');
+        console.log(existingText);
     </script>
   </body>
 </html>
