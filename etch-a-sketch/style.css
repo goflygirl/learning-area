@@ -1,0 +1,34 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-grid{
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    height: 800px;
+    background-color: blueviolet;
+}
+
+.sketchpad{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    height: 500px;
+    background-color: cadetblue;
+}
+
+.sketchpad > div{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    flex: 1 0 auto;
+
+}
+
+.sketchpad > div > * {
+    flex: 1;
+}
